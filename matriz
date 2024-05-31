@@ -1,0 +1,349 @@
+#construçao de matrizes
+
+import numpy as np
+
+matriz = np.arange(1,10)
+
+print(matriz)
+
+
+
+#construção utilizando vetores
+
+#utilizando listas
+
+a = [1,3,5,7]
+b = [9,11,13,15]
+
+matriz = [a,b]
+
+print(matriz)
+
+
+
+#utilizando tuplas
+
+a = (1,3,5,7)
+b = (9,11,13,15)
+
+matriz = (a,b)
+
+print(matriz)
+
+
+
+#construção por linhas e colunas
+
+import numpy as np
+
+matriz = np.arange(5,11).reshape((3, 2))
+
+print(matriz)
+
+
+
+#manipulação de elementos (substituição de elementos)
+
+import numpy as np
+
+matriz = np.arange(6)
+
+print(matriz)
+
+
+
+matriz[2] = 10
+print(matriz)
+
+
+
+
+import numpy as np
+
+matriz = np.arange(6).reshape((3, 2))
+
+print(matriz)
+
+
+
+matriz[1][1] = 10
+print(matriz)
+
+
+
+#Soma
+
+matriz_1 = []
+linha1 = int(input("Digite o número de linhas da 1° matriz: "))
+coluna1 = int(input("Digite o número de colunas da 1° matriz: "))
+
+print("\n")
+
+matriz_2 = []
+linha2 = int(input("Digite o número de linhas da 2° matriz: "))
+coluna2 = int(input("Digite o número de coluns da 2° matriz: "))
+
+if linha1 == linha2 and coluna1 == coluna2:
+  print("\n")
+  print("O número de linhas e colunas das duas matrizes são iguais, então é possível somar")
+  print("\n")
+  for l1 in range(linha1):
+    linha1 = []
+    for c1 in range(coluna1):
+      num1 = int(input(f"Digite o número da linha {l1+1} e da coluna {c1+1} da Matriz 1: "))
+      linha1.append(num1)
+    matriz_1.append(linha1)
+  print("\n")
+  for l2 in range(linha2):
+    linha2 = []
+    for c2 in range(coluna2):
+      num2 = int(input(f"Digite o número da linha {l2+1} e da coluna {c2+2} da Matriz 2: "))
+      linha2.append(num2)
+    matriz_2.append(linha2)
+
+  print("\nMatriz 1")
+  for linha1 in matriz_1:
+    print(linha1)
+
+  print("\nMatriz 2")
+  for linha2 in matriz_2:
+    print(linha2)
+
+  matriz_resultado = []
+  for i in range(len(linha1)):
+      linha_resultado = []
+      for j in range(coluna1):
+          elemento_resultado = matriz_1[i][j] + matriz_2[i][j]
+          linha_resultado.append(elemento_resultado)
+      matriz_resultado.append(linha_resultado)
+
+  print("\nMatriz Resultado:")
+  for linha in matriz_resultado:
+      print(linha)
+else:
+  print("\n")
+  print("As matrizes precisam ter o mesmo número de linhas e colunas")
+
+
+
+
+#Subtração
+
+matriz_1 = []
+linha1 = int(input("Digite o número de linhas da 1° matriz: "))
+coluna1 = int(input("Digite o número de colunas da 1° matriz: "))
+
+print("\n")
+
+matriz_2 = []
+linha2 = int(input("Digite o número de linhas da 2° matriz: "))
+coluna2 = int(input("Digite o número de coluns da 2° matriz: "))
+
+if linha1 == linha2 and coluna1 == coluna2:
+  print("\n")
+  print("O número de linhas e colunas das duas matrizes são iguai, então é possível subtrair")
+  print("\n")
+  for l1 in range(linha1):
+    linha1 = []
+    for c1 in range(coluna1):
+      num1 = int(input(f"Digite o número da linha {l1+1} e da coluna {c1+1} da Matriz 1: "))
+      linha1.append(num1)
+    matriz_1.append(linha1)
+  print("\n")
+  for l2 in range(linha2):
+    linha2 = []
+    for c2 in range(coluna2):
+      num2 = int(input(f"Digite o número da linha {l2+1} e da coluna {c2+2} da Matriz 2: "))
+      linha2.append(num2)
+    matriz_2.append(linha2)
+
+  print("\nMatriz 1")
+  for linha1 in matriz_1:
+    print(linha1)
+
+  print("\nMatriz 2")
+  for linha2 in matriz_2:
+    print(linha2)
+
+  matriz_resultado = []
+  for i in range(len(linha1)):
+      linha_resultado = []
+      for j in range(coluna1):
+          elemento_resultado = matriz_1[i][j] - matriz_2[i][j]
+          linha_resultado.append(elemento_resultado)
+      matriz_resultado.append(linha_resultado)
+
+  print("\nMatriz Resultado:")
+  for linha in matriz_resultado:
+      print(linha)
+else:
+  print("\n")
+  print("As matrizes precisam ter o mesmo número de linhas e colunas")
+
+
+
+#Multiplicação por Constante(k)
+
+matriz = []
+linha1 = int(input("Digite o número de linhas da 1° matriz: "))
+coluna = int(input("Digite o número de colunas da 1° matriz: "))
+
+print("\n")
+
+for l in range(linha1):
+    linha1 = []
+    for c in range(coluna):
+      num = int(input(f"Digite o número da linha {l+1} e da coluna {c+1} da Matriz 1: "))
+      linha1.append(num)
+    matriz.append(linha1)
+
+print("\nMatriz")
+for linha in matriz:
+    print(linha)
+
+k = int(input("\nQual é a constante: "))
+
+matriz_resultado = []
+for i in range(len(linha1)):
+    linha_resultado = []
+    for j in range(coluna1):
+        elemento_resultado = matriz[i][j] * k
+        linha_resultado.append(elemento_resultado)
+    matriz_resultado.append(linha_resultado)
+
+print("\nMatriz Resultado: ")
+for linha in matriz_resultado:
+    print(linha)
+
+
+
+#Multiplicaçao de matrizes
+
+import numpy as np
+
+matriz_1 = []
+linha1 = int(input("Digite o número de linhas da 1° matriz: "))
+coluna1 = int(input("Digite o número de colunas da 1° matriz: "))
+
+print("\n")
+
+matriz_2 = []
+linha2 = int(input("Digite o número de linhas da 2° matriz: "))
+coluna2 = int(input("Digite o número de coluns da 2° matriz: "))
+
+if linha1 == coluna2 and linha2 == coluna1:
+  print("\n")
+  print("O número de linhas da 1° matriz é igual ao número de colunas da 2° matriz, então é possível multiplicar")
+  print("\n")
+  for l1 in range(linha1):
+    linha1 = []
+    for c1 in range(coluna1):
+      num1 = int(input(f"Digite o número da linha {l1+1} e da coluna {c1+1} da Matriz 1: "))
+      linha1.append(num1)
+    matriz_1.append(linha1)
+  print("\n")
+  for l2 in range(linha2):
+    linha2 = []
+    for c2 in range(coluna2):
+      num2 = int(input(f"Digite o número da linha {l2+1} e da coluna {c2+2} da Matriz 2: "))
+      linha2.append(num2)
+    matriz_2.append(linha2)
+
+  print("\nMatriz 1")
+  for linha1 in matriz_1:
+    print(linha1)
+
+  print("\nMatriz 2")
+  for linha2 in matriz_2:
+    print(linha2)
+
+  matriz_1 = np.array(matriz_1)
+  matriz_2 = np.array(matriz_2)
+
+  matriz_multi = matriz_1 * matriz_2
+
+  matriz = matriz_multi.tolist()
+
+  print(f'\nMatriz resultado: {matriz}')
+
+else:
+  print("\nO número de linhas da 1° matriz não é igual ao número de colunas da 2° matriz, então não é possível multiplicar")
+
+
+
+
+#determinante
+
+import numpy as np
+
+matriz = np.arange(1,10).reshape(3, 3)
+determinante = np.linalg.det(matriz)
+
+print(matriz)
+print('\n')
+print(determinante)
+
+
+
+#dimensão
+
+import numpy as np
+
+matriz = np.arange(9).reshape(3, 3)
+
+print(matriz)
+print('\n')
+print(matriz.shape)
+
+
+
+#extração de diagonal
+
+import numpy as np
+
+matriz = np.arange(9).reshape(3, 3)
+diagonal = np.diagonal(matriz)
+
+print(matriz)
+print('\n')
+print(diagonal)
+
+
+
+
+#juntar matrizes por linhas
+
+matriz_1 = np.arange(1,10).reshape(3,3)
+
+print(matriz_1)
+print('\n')
+
+matriz_2 = np.arange(10,19).reshape(3,3)
+
+print(matriz_2)
+print('\n')
+
+matriz = np.vstack((matriz_1,matriz_2))
+
+print(matriz)
+
+
+
+#juntar matrizes por colunas
+
+matriz_1 = np.arange(1,10).reshape(3,3)
+
+print(matriz_1)
+print('\n')
+
+matriz_2 = np.arange(10,19).reshape(3,3)
+
+print(matriz_2)
+print('\n')
+
+matriz = np.hstack((matriz_1,matriz_2))
+
+print(matriz)
+
+
+
